@@ -42,9 +42,11 @@ public class UpdateBlogController extends HttpServlet {
 			
 			e.printStackTrace();
 		}
-		RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
-		rd.forward(request, response);
-	
+		/*
+		 * RequestDispatcher rd=this.getServletContext().getRequestDispatcher(
+		 * "/WEB-INF/views/blogView.jsp"); rd.forward(request, response);
+		 */
+	response.sendRedirect("allblogs");
 	}
 
 }
