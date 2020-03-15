@@ -39,7 +39,7 @@
                 <p>Posted on <b><c:out value="${blog.getPostedOn()}" /></b> </p>
             </div>
       	  <div class="card-buttons">
-             <a href="edit?id=<c:out value='${blog.getBlogId()}' />"><button type="button" id="edit">EDIT</button></a> <span>|</span><a href="edit?id=<c:out value='${blog.getBlogId()}' />"><button id="delete">DELETE</button></a>
+             <a href="edit?id=<c:out value='${blog.getBlogId()}' />"><button type="button" id="edit">EDIT</button></a> <span>|</span><a href="delete?id=<c:out value='${blog.getBlogId()}'/>"><button id="delete">DELETE</button></a>
             </div>
         </div>
      </c:forEach> 

@@ -114,16 +114,17 @@ public class BlogDaoImpl implements BlogDaoInterface {
 		}
 		return blogList;
 	}
-//	@Override
-//	public boolean deleteBlog(int id) throws SQLException {
-//		boolean rowDeleted;
-//		try (Connection connection = JDBCUtils.getConnection();
-//				PreparedStatement statement = connection.prepareStatement(DELETE_TODO_BY_ID);) {
-//			statement.setInt(1, id);
-//			rowDeleted = statement.executeUpdate() > 0;
-//		}
-//		return rowDeleted;
-//	}
+	@Override
+	public boolean deleteBlog(int id) throws SQLException {
+		System.out.println(id);
+		boolean rowDeleted;
+		try (Connection connection = ConnectionManager.getConnection();
+				PreparedStatement statement = connection.prepareStatement(DELETE_BLOG_BY_ID)) {
+			statement.setInt(1, id);
+			rowDeleted = statement.executeUpdate() > 0;
+		}
+		return rowDeleted;
+	}
 
 	@Override
 	public boolean updateBlog(Blog blog) throws Exception {

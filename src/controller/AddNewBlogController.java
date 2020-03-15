@@ -37,9 +37,11 @@ public class AddNewBlogController extends HttpServlet {
 		
 		BlogDaoImpl blogDao = new BlogDaoImpl();
 		blogDao.insertBlog(blog);
-		RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
-		rd.forward(request, response);
-	
+		response.sendRedirect("allblogs");
+		/*
+		 * RequestDispatcher rd=this.getServletContext().getRequestDispatcher(
+		 * "/WEB-INF/views/blogView.jsp"); rd.forward(request, response);
+		 */
 		
 	}
 }
